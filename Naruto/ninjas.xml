@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+  <?xml-model href="ninjas.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<listaNinjas>
+    <villa nombre="Villa oculta de la Hoja">
+        <kage nombre="Sarutobi" apellido="Mutenroy" numeroKage="18" />
+        <sensei>
+            <jonin nombre="Kakashi" apellido="Hatake" fecha="1994-02-25">
+                <estudiante nombre="Naruto" apellido="Uzumaki">
+                    <nivel>Genin</nivel>
+                    <técnicaPoderosa id="T01A" />
+                </estudiante>
+                <estudiante nombre="Sasuke" apellido="Uchiha">
+                    <nivel>Genin</nivel>
+                    <técnicaPoderosa id="T02A" />
+                </estudiante>
+                <estudiante nombre="Sakura" apellido="Otodachi">
+                    <nivel>Genin</nivel>
+                    <técnicaPoderosa id="T01B" />
+                </estudiante>
+            </jonin>
+            <jonin nombre="Tsunade" apellido="Momochi" fecha="1940-03-26">
+                <estudiante nombre="Hino" apellido="Futabe">
+                    <nivel>Chunin</nivel>
+                    <técnicaPoderosa id="T01B" />
+                </estudiante>
+            </jonin>
+        </sensei>
+    </villa>
+
+    <villa nombre="Villa oculta de la Arena">
+        <kage nombre="Gaara" apellido="Nara" numeroKage="28" />
+        <sensei></sensei>
+    </villa>
+
+    <villa nombre="Villa oculta de la Niebla">
+        <kage nombre="Samurochi" apellido="Hotai" numeroKage="3" />
+        <sensei>
+            <jonin nombre="Guy" apellido="Shikaido" fecha="1980-03-05">
+                <estudiante nombre="Rock" apellido="Lee">
+                    <nivel>Chunin</nivel>
+                    <técnicaPoderosa id="T01B" />
+                </estudiante>
+            </jonin>
+        </sensei>
+    </villa>
+
+    <técnicasNinja>
+        <técnica id="T01A">
+            <nombre>Rasengan</nombre>
+            <descripción>Torbellino azul</descripción>
+        </técnica>
+        <técnica id="T02A">
+            <nombre>Chidori</nombre>
+            <descripción>Rayos</descripción>
+        </técnica>
+        <técnica id="T01B">
+            <nombre>Kunai de flores</nombre>
+            <descripción>Pétalos afilados</descripción>
+        </técnica>
+    </técnicasNinja>
+</listaNinjas>

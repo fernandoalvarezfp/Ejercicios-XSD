@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="GrandLine">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Tripulacion" type="TipoTripulacion" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="Batalla" type="TipoBatalla" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:key name="idT">
+        <xs:selector xpath="Tripulacion"/>
+        <xs:field xpath="@idTripulacion"/>
+    </xs:key>
+    <xs:keyref name="idB" refer="idT">
+        <xs:selector xpath="./Batalla/Bandos"/>
+        <xs:field xpath="@idBando"/>
+    </xs:keyref>
+</xs:element>
+
+    <xs:complexType name="TipoTripulacion">
+        <xs:sequence>
+            <xs:element name="Pirata" type="TipoPirata" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string"/>
+        <xs:attribute name="barco" type="xs:string"/>
+        <xs:attribute name="idTripulacion" type="codigoTripulacion"/>
+    </xs:complexType>
+
+    <xs:complexType name="TipoPirata">
+        <xs:sequence>
+            <xs:element name="FrutaDelDiablo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string"/>
+        <xs:attribute name="capitan" type="tipoCapitan"/>
+        <xs:attribute name="recompensa" type="xs:string"/>
+        <xs:attribute name="situacion" type="tipoSituacion"/>
+    </xs:complexType>
+
+    <xs:complexType name="TipoBatalla">
+        <xs:sequence>
+            <xs:element name="Bandos" type="TipoBando" minOccurs="2" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string"/>
+        <xs:attribute name="fecha" type="xs:date"/>
+    </xs:complexType>
+
+    <xs:complexType name="TipoBando">
+    <xs:attribute name="nombre" type="xs:string"/>
+    <xs:attribute name="idBando" type="xs:string"/>
+    </xs:complexType>
+
+<!--Restricciones-->
+    <xs:simpleType name="tipoCapitan">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(si|no)"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigoTripulacion">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(A|B|C)+[0]+[0-9]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoSituacion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="vivo"></xs:enumeration>
+            <xs:enumeration value="muerto"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

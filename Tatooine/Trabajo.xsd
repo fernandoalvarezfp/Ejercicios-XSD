@@ -1,0 +1,111 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tatooine">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="puerto" type="tipoPuerto" maxOccurs="unbounded"></xs:element>
+            <xs:element name="palacio" type="tipoPalacio" maxOccurs="1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+      <!-- RELACION CODIGO CLIENTE Y CODIGO NAVE-->
+    <xs:key name="naveID">
+      <xs:selector xpath=".//nave"></xs:selector>
+      <xs:field xpath="@codNave"></xs:field>
+    </xs:key>
+    <xs:keyref name="clienteNaveRef" refer="naveID">
+      <xs:selector xpath=".//cliente"></xs:selector>
+      <xs:field xpath="@codCli"></xs:field>
+    </xs:keyref>
+  </xs:element>
+  
+  <!-- PUERTO-->
+  <xs:complexType name="tipoPuerto">
+    <xs:sequence>
+        <xs:element name="cantina" type="tipoCantina" minOccurs="1"></xs:element>
+        <xs:element name="taller" type="tipoTaller" minOccurs="1"></xs:element>
+        <xs:element name="tiendaDroides" minOccurs="0" type="xs:string"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="coordenadas" type="tipoCoordenadas" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <!-- PALACIO-->  
+  <xs:complexType name="tipoPalacio">
+    <xs:sequence>
+        <xs:element name="propietario" maxOccurs="1"></xs:element>
+        <xs:element name="empleado" maxOccurs="unbounded" type="tipoEmpleado"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="construccion" type="tipoConstruccion"></xs:attribute>
+  </xs:complexType>
+
+  <!-- EMPLEADO-->
+  <xs:complexType name="tipoEmpleado">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="profesion"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- CANTINA-->
+  <xs:complexType name="tipoCantina">
+    <xs:sequence>
+        <xs:element name="nombre"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="androide" type="tipoAndroide"></xs:attribute>
+  </xs:complexType>
+
+  <!-- TALLER-->
+  <xs:complexType name="tipoTaller">
+    <xs:sequence>
+      <xs:element name="nave" type="tipoNave" maxOccurs="unbounded"></xs:element>
+      <xs:element name="cliente" type="tipoCliente" maxOccurs="unbounded"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- NAVE-->
+  <xs:complexType name="tipoNave">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="codNave" type="tipoCodNave" use="required"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- CLIENTE-->
+    <xs:complexType name="tipoCliente">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="codCli" type="xs:string" use="required"></xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+
+  <!-- RESTRICCIONES-->
+    <xs:simpleType name="tipoCoordenadas">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="[0-9]{4},[0-9]{4}"></xs:pattern>
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoAndroide">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="(si|no)"></xs:pattern>
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoProfesion">
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="mayordomo"></xs:enumeration>
+        <xs:enumeration value="cazarrecompensas"></xs:enumeration>
+        <xs:enumeration value="delincuente"></xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoConstruccion">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="[0-9]+(ABY|DBY)"></xs:pattern>
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoCodNave">
+      <xs:restriction base="xs:string">
+          <xs:pattern value="[N][0-9]{3}"></xs:pattern>
+      </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

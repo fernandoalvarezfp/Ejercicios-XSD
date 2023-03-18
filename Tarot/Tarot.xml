@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tarotSesion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="./Tarot.xsd">
+        <persona>2</persona>
+        <precio>60</precio>
+        <horario>matutino</horario>
+        <tarotista nombre = "Esperanza" apellido = "Gracia"> 
+            <fecha>05/12/2022</fecha>
+            <baraja>Marsella</baraja>
+        </tarotista>
+    <tirada>
+        <carta codigo = "M19" nombre = "El sol" numero="XIX">
+        </carta>
+        <carta codigo = "m01" nombre = "As de copas" numero="I">
+            <palo>Copas</palo>
+        </carta>
+        <carta codigo = "M22" nombre="El mundo" numero="XXII">
+        </carta>
+    </tirada>
+</tarotSesion>

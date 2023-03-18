@@ -1,0 +1,112 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="discografía">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="peza" type="tipoPeza"/>
+                <xs:element name="album" type="tipoAlbum"/>
+            </xs:choice>
+        </xs:complexType>
+        <xs:key name="codigoAl">
+            <xs:selector xpath="album"/>
+            <xs:field xpath="@codigo"/>
+        </xs:key>
+        <xs:keyref name="album" refer="codigoAl">
+            <xs:selector xpath="peza"/>
+            <xs:field xpath="@album"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="tipoPeza">
+        <xs:sequence>
+            <xs:element name="ritmo" type="tipoRitmo"/>
+            <xs:element name="titulo" type="tipoTitulo"/>
+            <xs:element name="descricion" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[M|P|X]\d{2}"></xs:pattern>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="album" type="xs:string"/>
+        <xs:attribute name="duracion">
+            <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:fractionDigits value="2"></xs:fractionDigits>
+                    </xs:restriction>
+                </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="tipoAlbum">
+        <xs:sequence>
+            <xs:element name="titulo" type="tipoTitulo"/>
+            <xs:element name="artista" type="xs:string"/>
+            <xs:element name="dataPublicacion" type="tipoData"/>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="tipoCodigo"></xs:attribute>
+        <xs:attribute name="pistas" type="xs:unsignedShort"/>
+    </xs:complexType>
+    <xs:complexType name="tipoRitmo">
+        <xs:attribute name="compás">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[2-4]/4"></xs:pattern>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="tipo">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Muiñeira"/>
+                    <xs:enumeration value="Pasodoble"/>
+                    <xs:enumeration value="Xota"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="tipoTitulo">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5"/>
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipoData">
+        <xs:attribute name="dia">
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:pattern value="(0[1-9])|([1-2][0-9])|30|31"></xs:pattern>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="mes">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Xaneiro"/>
+                    <xs:enumeration value="Febreiro"/>
+                    <xs:enumeration value="Marzo"/>
+                    <xs:enumeration value="Abril"/>
+                    <xs:enumeration value="Maio"/>
+                    <xs:enumeration value="Xuño"/>
+                    <xs:enumeration value="Xullo"/>
+                    <xs:enumeration value="Agosto"/>
+                    <xs:enumeration value="Setembro"/>
+                    <xs:enumeration value="Outubro"/>
+                    <xs:enumeration value="Novembro"/>
+                    <xs:enumeration value="Decembro"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="ano">
+            <xs:simpleType>
+                <xs:restriction base="xs:unsignedInt">
+                    <xs:totalDigits value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="tipoCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(D0[1-9])|(D[1-9][0-9])"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

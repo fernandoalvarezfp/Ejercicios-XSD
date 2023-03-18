@@ -1,0 +1,65 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tarotSesion">
+        <xs:complexType>
+              <xs:element name="persona" minOccurs="1" maxOccurs="4"/>
+              <xs:element name="precio" type="xs:decimal"/>
+              <xs:element name="horario"/>
+        </xs:complexType>
+
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="matutino"/>
+                <xs:enumeration value="nocturno"/>
+            </xs:restriction>
+        </xs:simpleType>
+
+        <xs:element name="tarotista"/>
+            <xs:complexType>
+              <xs:sequence>
+                   <xs:element name="fecha" type="xs:date"/>
+                   <xs:element name="baraja" type="tipoBaraja"/>
+              </xs:sequence>
+                  <xs:attribute name="nombre" type="xs:string" use="required"/>
+                  <xs:attribute name="apellido" type="xs:string" use="required"/>
+              </xs:complexType>
+          <xs:element name="tirada"/>
+
+          <xs:element name="arcanoMenor">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="numero" type="xs:string"/>
+                    <xs:element name="palo" type="tipoPalo"/>
+                  </xs:sequence>
+                    <xs:attribute name="codigo" type="codigoArMe"/>
+                </xs:complexType>
+            
+          <xs:simpleType name="codigoArMe">
+            <xs:restriction base="xs:string">
+                <xs:pattern value="m[0-9]{2}"/>
+            </xs:restriction>
+          </xs:simpleType>
+          <xs:key name="codigoCarta">
+                  <xs:selector xpath=".//carta"></xs:selector>
+                  <xs:field xpath="@codCarta"></xs:field>
+          </xs:key>
+
+          <xs:simpleType name="tipoPalo">
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Copas"/>
+                <xs:enumeration value="Espadas"/>
+                <xs:enumeration value="Bastos"/>
+                <xs:enumeration value="Oros"/>
+            </xs:restriction>
+          </xs:simpleType>
+          </xs:element>
+</xs:schema>
+              
+
+
+
+          
+
+         
+               
+                  

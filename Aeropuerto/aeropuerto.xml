@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aeropuerto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./aeropuerto.xsd">
+
+    <nombre>LAX</nombre>
+    <vuelos fecha="2023-03-20">
+        <vuelo codigo="A-100" tipo="Comercial" estado="E">
+            <diario/>
+            <origen>Los Angeles</origen>
+            <destino>Arizona</destino>
+            <horaSalida>04:00:00</horaSalida>
+            <horaLlegada>05:30:00</horaLlegada>
+        </vuelo>
+
+        <vuelo codigo="A-102" tipo="Privado">
+            <origen>Los Angeles</origen>
+            <destino>Miami</destino>
+            <horaSalida>16:00:00</horaSalida>
+            <horaLlegada>21:10:00</horaLlegada>
+        </vuelo>
+    </vuelos>
+    <pilotos>
+        <piloto dni="15487163N" nombre="Alfredo" codigoVuelo="A-100"/>
+        <piloto dni="36578637F" nombre="Benito" codigoVuelo="A-102"/>
+    </pilotos>
+
+</aeropuerto>

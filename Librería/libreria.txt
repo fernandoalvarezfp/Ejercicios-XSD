@@ -1,0 +1,25 @@
+Crea un XSD que valide el xml de una libreria:
+
+    Los articulos están compuestos por:
+        Elementos:
+            - Titulo.
+            - Autor.
+            - Número de páginas. Consta solo de números.
+            - Género.
+            - Fecha de lanzamiento. Tiene los atributos dia, mes y año. El día comprende entre los números 1 y 31. 
+              El mes solo puede tomar el valor del nombre del mes en castellano. El año tendrá que estar constituído de 4 números.
+            - Sinopsis. No es obligatoria.
+
+        Atributos:
+            - El ISBN tiene entre 10 y 13 cifras.
+            - El precio es decimal con solo 2 cifras decimales.
+            - El atributo editorial hace referencia al atributo id de editorial.
+
+    Las editoriales están compuestas por:
+        Elementos:
+            - Nombre.
+            - Dirección.
+            - Tlf. Consta de 9 cifras.
+
+        Atributos:
+            - El id consta de una letra y 2 cifras.

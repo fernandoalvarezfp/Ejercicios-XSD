@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="producciones.xsd" type="application/xml"?>
+<producciones>
+    <proyecto nombre="O Faro" productora="Vaca Films" fecha="2024-09-24" id="PX0024">
+        <tipo>Largometraje</tipo>
+        <seguros>
+            <seguro>Responsabilidad civil</seguro>
+        </seguros>
+        <patrocinadores>
+            <patrocinador>IGAPE</patrocinador>
+        </patrocinadores>
+        <localizaciones>
+            <localizacion>O Grove</localizacion>
+        </localizaciones>
+        <personal>
+            <empleado nombre="Álvaro Agra">
+                <departamento>Producción</departamento>
+                <empresa>Undodez</empresa>
+                <puesto>Auxiliar de Producción</puesto>
+            </empleado>
+            <empleado nombre="José Tojeiro">
+                <departamento>Iluminación</departamento>
+                <empresa>Filamento Iluminación</empresa>
+                <puesto>Diseñador de iluminación</puesto>
+            </empleado>
+        </personal>
+    </proyecto>
+    <proyecto nombre="Krazzy Kray Fest" productora="Fonosaurios" fecha="2022-10-23" id="PX0025">
+        <tipo>Festival</tipo>
+        <seguros>
+            <seguro>Responsabilidad civil</seguro>
+            <seguro>Suspensión o Cancelación de Espectáculos</seguro>
+        </seguros>
+        <patrocinadores>
+            <patrocinador>Estrella Galicia</patrocinador>
+            <patrocinador>Meyer Sound</patrocinador>
+        </patrocinadores>
+        <localizaciones>
+            <localizacion>Pazo de Torrado</localizacion>
+        </localizaciones>
+        <personal>
+            <empleado nombre="Miguel Vilas">
+                <departamento>Sonido</departamento>
+                <empresa>Ergo Audio</empresa>
+                <puesto>Ingeniero de sistemas</puesto>
+            </empleado>
+            <empleado nombre="Juan Torre">
+                <departamento>Sonido</departamento>
+                <empresa>Ergo Audio</empresa>
+                <puesto>Técnico de monitores</puesto>
+            </empleado>
+            <empleado nombre="Cándido Gálvez">
+                <departamento>Artistas</departamento>
+                <empresa>Viva Belgrado</empresa>
+                <puesto>Guitarrista</puesto>
+            </empleado>
+            <empleado nombre="Sara Castro">
+                <departamento>Producción</departamento>
+                <empresa>Fonosaurios</empresa>
+                <puesto>Directora de escenario</puesto>
+            </empleado>
+        </personal>
+    </proyecto>
+</producciones>

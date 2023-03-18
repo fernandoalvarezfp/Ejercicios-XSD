@@ -1,0 +1,30 @@
+
+
+--De el GrandLine recuperaremos las destintas Tripulaciones existentes y sus Batallas.
+
+--Como mínimo tendrá que haber una Tripulacion y una Batalla.
+Enunciado:
+
+--Las Tripulaciones las identificamos por nombre, barco, y un codigo de identificacion.
+
+--Cada Tripulación contiene Piratas que a su vez están identificados por un nombre,
+si es capitan, la recompensa por su cabeza y su situación actual.
+
+--Solo algunos Piratas comieron una fruta del diablo.
+
+--Como mínimo tiene que haber un Pirata en cada Tripulación.
+
+--Cada Batalla la identificamos por nombre y fecha (Año-mes-dia).
+
+--Cada Batalla contiene Bandos identificados por nombre y un codigo de identificacion.
+
+--Los codigos de las Tripulaciones y los de Batalla tenemos que relacionarlos.
+
+--Dichos codigos tienen que empezar por ABC seguidos de un 0 y de un numero.
+
+--La situacion actual de los Piratas solo puede ser "vivo" o "muerto".
+
+--Para definir si el Pirata es capitán habrá que poner "si" o "no".
+
+--Cada batalla tiene que tener como mínimo 2 bandos.
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<parques xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="parques.xsd">
+
+    <parque ranked="PAR007">
+        <nombre>PORT AVENTURA</nombre>
+        <descripcion>Esta considerado el mejor y más visitado parque temático de España. 
+            Sus impresionantes atracciones que os subirán la adrenalina, lo convierten 
+            en uno de los 10 mejores parques de atracciones del mundo.</descripcion>
+        <tematica>Parque de atracciones</tematica>
+        <Contacto>
+            <telefono tipo="fijo">946254436</telefono>
+            <Email>info@portaventura.com</Email>
+        </Contacto>
+        <dondeEstamos>
+            <direccion>Landetxo Goikoa</direccion>
+            <postalCode>48100</postalCode>
+            <territorioCodigo>48</territorioCodigo>
+            <pais name="España" provincia="Tarragona" />
+        </dondeEstamos>
+        <localizacion>43.3449152</localizacion>
+    </parque>
+
+    <parque ranked="PAR006">
+        <nombre>LEGOLAND BILLUND</nombre>
+        <descripcion>Encumbrado como un símbolo de Dinamarca, es uno de los 
+            mejores y más importantes parques temáticos del mundo</descripcion>
+        <tematica>Parque temático</tematica>
+        <Contacto>
+            <telefono tipo="movil">946740061</telefono>
+            <Email>olentzero@izenaduba.com</Email>
+        </Contacto>
+        <dondeEstamos>
+            <direccion>Landetxo Goikoa</direccion>
+            <postalCode>48100</postalCode>
+            <territorioCodigo>48</territorioCodigo>
+            <pais name="Dinamarca" />
+        </dondeEstamos>
+        <localizacion>43.35694612402693</localizacion>
+    </parque>
+
+    <parque ranked="PAR003">
+        <nombre>UNIVERSAL ESTUDIOS FLORIDA</nombre>
+        <descripcion>Forma parte del Universal Orlando Resort, un complejo de 
+            parques temáticos localizado en Orlando.</descripcion>
+        <tematica>Parques temáticos y de atracciones</tematica>
+        <Contacto>
+            <telefono tipo="fijo">946107066</telefono>
+            <Email>universal@gmail.com</Email>
+        </Contacto>
+        <dondeEstamos>
+            <direccion>Barrio de Biáñez nº 37</direccion>
+            <postalCode>48891</postalCode>
+            <territorioCodigo>48</territorioCodigo>
+            <pais name="Orlando" />
+        </dondeEstamos>
+        <localizacion>43.2464374</localizacion>
+    </parque>
+
+    <parque ranked="PAR014">
+        <nombre>DISNEYLAND PARIS</nombre>
+        <descripcion>El complejo Disneyland París consta de 2 parques temáticos.</descripcion>
+        <tematica>Parques temáticos y de atracciones</tematica>
+        <Contacto>
+            <telefono tipo="movil">688856283</telefono>
+            <Email>info@disneyparis.com</Email>
+        </Contacto>
+        <dondeEstamos>
+            <direccion>Landetxo Goikoa</direccion>
+            <postalCode>48100</postalCode>
+            <territorioCodigo>48</territorioCodigo>
+            <pais name="Francia" />
+        </dondeEstamos>
+        <localizacion>43.3512974</localizacion>
+    </parque>
+</parques>

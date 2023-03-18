@@ -1,0 +1,93 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="aeropuerto">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="nombre" type="tipoNombre" />
+                <xs:element name="vuelos" type="tipoVuelos"></xs:element>
+                <xs:element name="pilotos" type="tipoPiloto"></xs:element>
+            </xs:all>
+        </xs:complexType>
+        <xs:key name="codVuelo">
+            <xs:selector xpath=".//vuelo"></xs:selector>
+            <xs:field xpath="@codigo"></xs:field>
+        </xs:key>
+        <xs:keyref name="piloto" refer="codVuelo">
+            <xs:selector xpath=".//piloto"></xs:selector>
+            <xs:field xpath="@codigoVuelo"></xs:field>
+        </xs:keyref>
+    </xs:element>
+
+    <xs:complexType name="tipoVuelos">
+        <xs:sequence>
+            <xs:element name="vuelo" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:group ref="datosVuelo"></xs:group>
+                    <xs:attribute name="codigo" type="tipoCodigo" use="required"></xs:attribute>
+                    <xs:attribute name="tipo" type="tipoTipoVuelo" use="required"></xs:attribute>
+                    <xs:attribute name="estado" type="tipoEstado" use="optional" default="E"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="fecha" type="xs:date" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:group name="datosVuelo">
+        <xs:sequence>
+            <xs:element name="diario" minOccurs="0"></xs:element>
+            <xs:element name="origen" type="tipoCadena"></xs:element>
+            <xs:element name="destino" type="tipoCadena"></xs:element>
+            <xs:element name="horaSalida" type="xs:time"></xs:element>
+            <xs:element name="horaLlegada" type="xs:time"></xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:simpleType name="tipoTipoVuelo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Comercial"></xs:enumeration>
+            <xs:enumeration value="Privado"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodigo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]-[0-9]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoEstado">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[ERC]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoNombre">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCadena">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="5"></xs:minLength>
+            <xs:maxLength value="25"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoPiloto">
+        <xs:sequence>
+            <xs:element name="piloto" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="dni" type="tipoDNI" use="required"></xs:attribute>
+                    <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+                    <xs:attribute name="codigoVuelo" type="xs:string" use="required"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoDNI">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[1-8]{1}[0-9]{7}[A-Z]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

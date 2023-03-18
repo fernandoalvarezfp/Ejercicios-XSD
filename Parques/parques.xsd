@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="parques">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="parque" type="TipoParques"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="TipoParques">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="descripcion" type="xs:string"/>
+            <xs:element name="tematica" type="tipoTematica"/>
+            <xs:element name="Contacto" type="tipoContacto"/>
+            <xs:element name="dondeEstamos" type="tipoDondeEstamos"/>
+            <xs:element name="localizacion" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="ranked" type="TipoRanked"/>
+    </xs:complexType>
+
+    <xs:complexType name="tipoContacto">
+        <xs:sequence>
+            <xs:element name="telefono" type="tipoTlf"/>
+            <xs:element name="Email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTlf">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="tipo" type="tipoTipoTlf" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="tipoDondeEstamos">
+        <xs:sequence>
+            <xs:element name="direccion" type="xs:string"/>
+            <xs:element name="postalCode" type="tipoCodigopostal"/>
+            <xs:element name="territorioCodigo" type="xs:int"/>
+            <xs:element name="pais" type="tipoPais"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoPais">
+        <xs:attribute name="name" type="tipoNombrePais" use="required"/>
+        <xs:attribute name="codigoPais" type="xs:int" use="optional"/>
+        <xs:attribute name="provincia" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <!--Punto 1-->
+    <xs:simpleType name="TipoRanked">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[P][A][R][0-9]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Punto 2-->
+    <xs:simpleType name="tipoTematica">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+            <xs:minLength value="14"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Punto 3-->
+    <xs:simpleType name="tipoCodigopostal">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="\d{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Punto 4-->
+    <xs:simpleType name="tipoNombrePais">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="España"/>
+            <xs:enumeration value="Dinamarca"/>
+            <xs:enumeration value="Orlando"/>
+            <xs:enumeration value="Francia"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--Punto 5-->
+    <xs:simpleType name="tipoTipoTlf">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fijo"/>
+            <xs:enumeration value="movil"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

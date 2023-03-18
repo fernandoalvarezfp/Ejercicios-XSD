@@ -1,0 +1,18 @@
+Crea un esquema XML y un XSD con los datos proporcionados por la Nueva Republica Planetaria para validar los datos del planeta Tatooine.
+
+-Tatooine está compuesto por más de un puerto espacial y un solo palacio.
+-Estos puertos se identifican por sus atributos obligatorios, que son su nombre y sus coordenadas.
+-Todos los puertos espaciales tienen por lo menos una cantina y un taller de naves, pero solo algunos tienen tienda de droides.
+-El palacio tiene un propietario, por lo menos un empleado y un atributo construcción.
+-Los empleados tienen un atributo profesión.
+-La cantina tiene un elemento nombre para identificarse y un atributo androide para saber si pueden entrar los droides.
+-El taller tiene clientes y las naves de estos últimos para reparar.
+-Cliente tiene un atributo código obligatorio.
+-Nave tiene un atributo código obligatorio.
+-Hay que relacionar el código de la nave con el del cliente para saber a qué cliente pertenece la nave.
+
+-Las coordenadas del puerto tienen que tener un patrón de 4 números, una coma y otros 4 números.
+-El atributo androide solo admite los valores "si" o "no".
+-El tipo de profesión de los empleados puede adquirir el valor de "mayordomo", "cazarrecompensas" o "delincuente".
+-El atributo construcción tiene que empezar por números y terminar por "ABY" o "DBY".
+-El código de la nave tiene que empezar por una N seguido de 3 números.

@@ -1,0 +1,37 @@
+Tenemos que crear un documento xsd que valide el siguiente xml,
+el cual representa el mundial de f1, diferenciando las carreras y los
+pilotos.
+
+Las carreras tendrán la siguiente composición:
+
+    Elementos:
+        -Trazado: Tendremos que introducir el nombre del circuito.
+        -Ubicación: Lugar del gran premio.
+        -Distancia: Tendremos que indicar la distancia del circuito
+                    y indicar su unidad de medida en kilometros.
+                    Tendrá un atributo que nos indica las curvas que
+                    tiene el trazado.
+        
+    Atributos:
+        -Fecha: La tendremos que introducir con el formato AAAA-MM-DD
+        -Ganador: Debe hacer referencia al id del piloto.
+        -Curvas: El elemento distancia, deberá contener un atributo
+                 con el número de curvas del circuito.
+
+Los pilotos tienen que contener:
+
+    Elementos:
+        -Nombre
+        -Fecha de nacimiento: con formato AAAA-MM-DD
+        -Nacionalidad
+        -Escuderia
+        -Salario
+    
+    Atributos:
+        -ID: solo se podrán introducir 3 caracteres para identificar
+             al piloto.
+        -Dorsal: Número del piloto
+        -Victorias
+        -Puntos
+
+(Todos los atributos deben de ser obligatorios)

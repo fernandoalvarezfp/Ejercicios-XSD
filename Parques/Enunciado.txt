@@ -1,0 +1,19 @@
+https://losviajesdedomi.com/mejores-parques-de-atracciones/
+
+Crea un XSD que valide el siguiente documento "parques.xml" teniendo 
+en cuenta los siguientes puntos.
+
+-Cada parque tiene un atributo "ranked" obligatorio que tendr�:
+	*Empezar por "PAR".
+	*A continuaci�n iran 3 n�meros que definiran su pocici�n.
+
+-La tem�tica de los parques tendra un valor m�ximo de 50 caracteres
+y de 14 como m�nimo.
+
+-El codigo postal consta unicamente de 5 d�gitos.
+
+- Los unicos paises que se pueden introducir son Espa�a, Dinamarca,
+Orlando y Francia. Ademas los atributos provincia y codigo de pais
+que ser�n opcionales.
+
+-Los telefonos podran ser fijos o moviles.

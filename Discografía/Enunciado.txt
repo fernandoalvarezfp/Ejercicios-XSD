@@ -1,0 +1,26 @@
+Queremos crear un documento xsd que valide o seguiente xml, el cual representa a discografía dunha productora, distinguindo entre pezas musicales e álbumes.
+
+As pezas están compostas por:
+	
+	Elementos:
+	- Ritmo que as clasificará en: muiñeira, pasodoble ou xota.
+		-A súa vez, o ritmo terá un atributo compás do tipo X/Y. 
+	- Título, que terá una lonxitude minima de 5 caracteres e máxima de 20, permitindo espazos en branco.
+	- Descrición (opcional), onde se reflexará si a peza está adicada a algunha persoa o lugar.
+	
+	Atributos:
+	- ID, sendo este o identificador unico de la peza, deberá ter a inicial do ritmo (M, P, X) e un numero de duas cifras. (Ej: P01, M82)
+	- Album, deberá referenciar o codigo do album correspondente.
+	- Duración, deberá ser un número con dúas cifras decimais.
+
+Os álbumes deberan ter:
+
+	Elementos:
+	- Título, que terá unha lonxitude mínima de 5 caracteres e máxima de 20, permitindo espazos en branco.
+	- Artista
+	- Data de publicación (dia, mes, ano)
+
+	Atributos:
+	-Código, do tipo DXX, evitando o D00.
+	-Número de canciones
+	

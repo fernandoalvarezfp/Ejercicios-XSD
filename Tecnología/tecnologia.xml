@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="tecnologia.xsd">
+    <local>
+        <lugar>Cambados</lugar>
+        <codPostal>36630</codPostal>
+    </local>
+    <local>
+        <lugar>Vilanova</lugar>
+        <codPostal>36627</codPostal>
+    </local>
+    <articulo tipo="ordenador">
+        <marca>MSI</marca>
+        <modelo>Pulse</modelo>
+        <precio>1348.99</precio>
+        <añosGarantia>5</añosGarantia>
+    </articulo>
+    <articulo tipo="movil">
+        <marca>Apple</marca>
+        <modelo>Iphone 13</modelo>
+        <precio>819.99</precio>
+        <añosGarantia>10</añosGarantia>
+    </articulo>
+    <articulo tipo="auriculares">
+        <marca>Xiaomi</marca>
+        <modelo>Redmi Buds</modelo>
+        <precio>33.99</precio>
+    </articulo>
+    <proveedor codigoPais="ESP" ciudad="Vilagarcia">
+        <nombre>Plexus</nombre>
+        <telefono>34 681612868</telefono>
+    </proveedor>
+    <proveedor codigoPais="ITA" ciudad="Napoles">
+        <nombre>Itatecno</nombre>
+        <telefono>393 681686868</telefono>
+    </proveedor>
+</empresa>

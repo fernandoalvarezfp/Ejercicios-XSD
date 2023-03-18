@@ -1,0 +1,76 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="carreras">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="circuito" type="tipoCircuito"/>
+                <xs:element name="piloto" type="tipoPiloto"/>
+            </xs:choice>
+        </xs:complexType>
+        <xs:key name="codP">
+            <xs:selector xpath="piloto"/>
+            <xs:field xpath="@idPiloto"/>
+        </xs:key>
+        <xs:keyref name="piloto" refer="codP">
+            <xs:selector xpath="circuito"/>
+            <xs:field xpath="@piloto"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="tipoCircuito">
+        <xs:sequence>
+            <xs:element name="trazado" type="xs:string"/>
+            <xs:element name="ubicacion" type="xs:string"/>
+            <xs:element name="distancia" type="tipoDistancia"/>
+        </xs:sequence>
+        <xs:attribute name="fecha" type="xs:date" use="required"/>
+        <xs:attribute name="idGanador" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z]{3}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="tipoPiloto">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+            <xs:element name="fechaNacimiento" type="xs:date"/>
+            <xs:element name="nacionalidad" type="xs:string"/>
+            <xs:element name="escuderia" type="xs:string"/>
+            <xs:element name="salario" type="xs:string"/>   
+        </xs:sequence>
+        <xs:attribute name="idPiloto" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z]{3}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="dorsal" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="victorias" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="puntos" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="tipoDistancia">         
+        <xs:simpleContent>             
+            <xs:extension base="tipoKM">                 
+                <xs:attribute name="curvas" type="xs:unsignedInt" use="required"/>             
+            </xs:extension>         
+        </xs:simpleContent>     
+    </xs:complexType>
+    <xs:simpleType name="tipoKM">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d+\skm"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

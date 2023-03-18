@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="taller">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="coche" maxOccurs="unbounded"></xs:element>
+                <xs:element name="empregado" type="tipoEmpregado"></xs:element>
+                <xs:element name="traballo" type="tipoTraballo"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="identificador">
+            <xs:selector xpath="empregado/mecánico"></xs:selector>
+            <xs:field xpath="@id"></xs:field>
+        </xs:key>
+        <xs:keyref name="identificador2" refer="identificador">
+            <xs:selector xpath="traballo/reparacion"></xs:selector>
+            <xs:field xpath="@idempregado"></xs:field>
+        </xs:keyref>
+    </xs:element>
+
+    <xs:group name="datos">
+        <xs:choice>
+            <xs:element name="nome" type="xs:string"></xs:element>
+            <xs:element name="apelido1" type="xs:string"></xs:element>
+            <xs:element name="apelido2" type="xs:string"></xs:element>
+            <xs:element name="contacto" type="xs:integer"></xs:element>
+        </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="coche">
+        <xs:sequence>
+            <xs:element name="marca" type="xs:string"></xs:element>
+            <xs:element name="modelo" type="xs:string"></xs:element>
+            <xs:element name="cor" type="xs:string"></xs:element>
+            <xs:element name="propietario" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="matrícula" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:element name="propietario">
+        <xs:complexType>
+            <xs:group ref="datos" maxOccurs="unbounded"></xs:group>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipoEmpregado">
+        <xs:sequence>
+            <xs:element name="mecánico" type="tipoMecánico" maxOccurs="unbounded"></xs:element>
+            <xs:element name="recepcionista" type="tipoRecepcionista" maxOccurs="1"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoMecánico">
+        <xs:group ref="datos" maxOccurs="unbounded"></xs:group>
+        <xs:attribute name="id" type="tipoIdEmpregado" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoRecepcionista">
+        <xs:group ref="datos" maxOccurs="unbounded"></xs:group>
+        <xs:attribute name="id" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTraballo">
+        <xs:choice>
+            <xs:element name="reparacion" type="tipoReparacion" maxOccurs="unbounded"></xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="tipoReparacion">
+        <xs:sequence>
+            <xs:element name="praca" type="xs:string"></xs:element>
+            <xs:element name="peza" type="xs:string"></xs:element>
+            <xs:element name="tempo" type="tipoTempo"></xs:element>
+            <xs:element name="preitv" type="tipoPreitv"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="idempregado" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTempo">
+        <xs:attribute name="horas" type="xs:integer"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoPreitv">
+        <xs:attribute name="realizada" type="xs:string" fixed="SÍ"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoIdEmpregado">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][0-9]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

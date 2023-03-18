@@ -1,0 +1,6 @@
+Exercicio sobre un taller de coches.
+Redactalo unha vez que teña feito o .xml e o .xsd para enterarme mellor do que quero!!
+Crea o documento XSD que valide o seguinte documento XML:
+- Cada empregado ten un id de 4 carácteres: o primeiro unha letra maíscula e os outros tres son díxitos.
+- Cada reparación está asociado ao id do empregado correspondente
+- As Preitvs estarán por defecto realizadas.

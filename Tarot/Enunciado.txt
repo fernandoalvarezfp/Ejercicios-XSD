@@ -1,0 +1,13 @@
+A partir del XML dado de una sesión de tarot, construye el XSD con los siguientes requisitos:
+
+-A cada sesión pueden acudir como mínimo una persona y como máximo, cuatro.
+-El precio de la sesión se da en un número entero.
+-Para el horario solo hay dos posibilidades: matutino o nocturno.
+-Cada sesión la lleva a cabo una tarotista de la que almacenamos como atributos su nombre y su apellido.
+-Cada tarotista se le asocia una fecha de la sesión y un tipo de baraja que ha usado en la tirada, 
+pudiendo ser: Marsella, egipcio o Art Nouveau.
+-Cada tirada tiene cartas.
+-Las cartas tienen como atributo su código de carta, su nombre y su número en el mazo.
+Pueden ser arcanos mayores o arcanos menores. Los arcanos menores tienen su propio palo, 
+puediendo ser copas, bastos, oros o espadas.
+

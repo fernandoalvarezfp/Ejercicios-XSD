@@ -1,0 +1,14 @@
+Con motivo de la celebración de los exámenes anuales para ascender de rango, todas las villas ocultas deciden centralizar los datos de sus ninjas para automatizar las inscripciones.
+Estas son las condiciones que debemos tener en cuenta:
+
+-Queremos almacenar los datos de cada villa oculta de ninjas(no sabemos cuántas son en total) y una lista de técnicas conocidas(de las que podremos almacenar 200 como máximo y 3 como mínimo).
+
+-De las villas queremos saber su nombre. Será un atributo obligatorio de villa y no podrá ser mayor de 30 caracteres.
+
+-Cada villa oculta posee un único Kage(o líder), del que se guardará su nombre, apellido y número que ocupa en la lista de Kage de su villa. Todos serán atributos obligatorios del Kage.
+
+-Cada villa tiene un grupo indefinido de sensei. Este grupo está compuesto por jonin quienes, cada uno, enseñan a un mínimo de 1 estudiante y un máximo de 3. De cada jonin, como atributos obligatorios, guardaremos su nombre y la fecha en que se convirtió en sensei. También registraremos a los estudiantes que enseña. Ten presente que alguna villa puede no tener ninjas jonin.
+
+-De cada estudiante queremos saber su nombre y apellido (que guardaremos como atributo). También queremos saber su nivel (pudiendo ser solo Genin o Chunnin) y la técnica ninja más poderosa que domina. Esta técnica debe ser referenciada a la lista de técnicas.
+
+-Finalmente, acompañando a la lista de villas, incluiremos una lista de técnicas ninja. De cada una estableceremos un id como atributo(y que servirá para referenciarlas desde los estudiantes). Este id debe respetar la siguiente estructura: empezar siempre por T, seguido por un código númerico que puede ir desde el 00 hasta el 99 y terminar por A(de avanzada) o B(de básica). Además, registraremos de cada técnica su nombre y descripción. 

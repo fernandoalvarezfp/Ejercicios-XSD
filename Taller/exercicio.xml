@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taller xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="exercicio2.xsd">
+    <coche matrícula="2638BGG">
+        <marca>Alfa Romeo</marca>
+        <modelo>Giulietta</modelo>
+        <cor>Negro</cor>
+        <propietario>
+            <nome>Martín</nome>
+            <apelido1>González</apelido1>
+            <apelido2>Pereira</apelido2>
+            <contacto>684315247</contacto>
+        </propietario>
+    </coche>
+    <coche matrícula="5499JKL">
+        <marca>Citroën</marca>
+        <modelo>C3 Aircross</modelo>
+        <cor>Rojo</cor>
+        <propietario>
+            <nome>Ramón</nome>
+            <apelido1>Suárez</apelido1>
+            <apelido2>Bernardez</apelido2>
+            <contacto>654318526</contacto>
+        </propietario>
+    </coche>
+    <empregado>
+        <mecánico id="M542">
+            <nome>Xosé</nome>
+            <apelido1>Martínez</apelido1>
+            <apelido2>Ramírez</apelido2>
+            <contacto>612485749</contacto>
+        </mecánico>
+        <mecánico id="M866">
+            <nome>Eva</nome>
+            <apelido1>Paez</apelido1>
+            <apelido2>Mariño</apelido2>
+            <contacto>634512789</contacto>
+        </mecánico>
+        <recepcionista id="R222">
+            <nome>Noelia</nome>
+            <apelido1>Sánchez</apelido1>
+            <apelido2>Bustelo</apelido2>
+            <contacto>661543295</contacto>
+        </recepcionista>
+    </empregado>
+    <traballo>
+        <reparacion idempregado="M542">
+            <praca>2638BGG</praca>
+            <peza>Parachoque dianteiro</peza>
+            <tempo horas="2"></tempo>
+            <preitv realizada="SÍ"></preitv>
+        </reparacion>
+        <reparacion idempregado="M866">
+            <praca>5499JKL</praca>
+            <peza>Motor</peza>
+            <tempo horas="16"></tempo>
+            <preitv realizada="SÍ"></preitv>
+        </reparacion>
+    </traballo>
+</taller>

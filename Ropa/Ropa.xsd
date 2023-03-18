@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tienda">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="producto" type="tipoProducto" />
+                <xs:element name="departamento" type="tipoDepartamento"/>
+
+            </xs:choice>
+        </xs:complexType>
+        <xs:key name="FueraRango">
+            <xs:selector xpath="departamento"/>
+            <xs:field xpath="@idDep"></xs:field>
+        </xs:key>
+        <xs:keyref name="RefDep" refer="FueraRango">
+            <xs:selector xpath="producto"/>
+            <xs:field xpath="@idDep"></xs:field>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="tipoProducto">
+        <xs:sequence>
+                <xs:element name="id" type="tipoPatron" />
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="descripcion" type="tipoDescripcion"/>
+                <xs:element name="precio" type="tipoPrecio"/>
+                <xs:element name="talla" type="tipoTalla"/>
+                <xs:element name="color" type="tipoColor"/>
+        </xs:sequence>
+        <xs:attribute name= "idDep" type="xs:string" />
+    </xs:complexType>
+    <xs:complexType name="tipoDepartamento">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="idDep" type="tipoId"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="tipoPrecio">
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">
+                <xs:attribute name="tipo" type="tipoMoneda"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoTalla">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="S" />
+            <xs:enumeration value="M" />
+            <xs:enumeration value="L" />
+            <xs:enumeration value="XL" />
+            <xs:enumeration value="XXL" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="tipoColor">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="frioOCalido" type="tipoSaturacion"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="tipoPatron">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="2023-\d+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoMoneda">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Euros"/>
+            <xs:enumeration value="Dolares"/>
+            <xs:enumeration value="Rupias"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoId">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="hombre"/>
+            <xs:enumeration value="mujer"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoSaturacion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="frio"/>
+            <xs:enumeration value="calido"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoDescripcion">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

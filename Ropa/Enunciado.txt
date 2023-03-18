@@ -1,0 +1,33 @@
+Ejercicio:
+
+Para Ropa.xml:
+
+Genera  un XSD el cual cumpla estas restricciones:
+    - producto tiene:
+        - Atributo idDep con referencia a departamento
+        - id
+            - El id siemple tiene que llevar el prefijo "2023-"
+              y despues un numero
+        - nombre
+        - descripcion
+            - Maximo 50 caracteres
+        - precio
+            - Atributo tipo solo puede tener: 
+                - Euros
+                -Dolares
+                -Rupias
+        - talla
+            - Solo tiene validos los valores:
+                - S
+                - M
+                - L 
+                - XL
+                - XXL
+        - color
+            - Atributo frioOCalido solo puede tener:
+                - frio
+                - calido 
+    - departamento
+        - Atributo idDep solo puede tener:
+            - hombre
+            - mujer

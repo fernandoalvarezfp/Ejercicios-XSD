@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tatooine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Trabajo.xsd">
+    <puerto nombre="Mos Eisley" coordenadas="1234,5678">
+        <cantina androide="no">
+            <nombre>Chalmun</nombre>
+        </cantina>
+        <taller>
+            <nave codNave="N023">Halcón Milenario</nave>
+            <cliente codCli="N023">Han Solo</cliente>
+
+        </taller>
+    </puerto>
+    <puerto nombre="Mos Espa" coordenadas="9876,5432">
+        <cantina androide="si">
+            <nombre>Cantina de Mos Espa</nombre>
+        </cantina>
+        <taller>
+            <nave codNave="N001">Tie Fighter</nave>
+            <nave codNave="N002">Caza Naboo modificado</nave>
+            <cliente codCli="N002">Mandalorian</cliente>
+            <cliente codCli="N001">Darth Vader</cliente>
+        </taller>    
+        <tiendaDroides/>
+    </puerto>
+    <palacio construccion="700ABY">
+        <propietario>Jabba the Hutt</propietario>
+        <empleado profesion="mayordomo">Bib Fortuna</empleado>
+        <empleado profesion="cazarrecompensas">Boba Fett</empleado>
+    </palacio>
+</tatooine>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Ropa.xsd"> 
+  <producto idDep='hombre'>
+    <id>2023-1</id>
+    <nombre>Camiseta básica</nombre>
+    <descripcion>Camiseta Manga Corta</descripcion>
+    <precio tipo='Euros'>15.99</precio>
+    <talla>M</talla>
+    <color frioOCalido='calido'>Rojo</color>
+  </producto>
+  <producto idDep='hombre' >
+    <id>2023-2</id>
+    <nombre>Pantalón vaquero</nombre>
+    <descripcion>Pantalón ajustado de tela vaquera</descripcion>
+    <precio tipo='Dolares'>29.99</precio>
+    <talla>L</talla>
+    <color frioOCalido='frio'>Azul</color>
+  </producto>
+  <producto idDep='mujer'>
+    <id>2023-3</id>
+    <nombre>Vestido de fiesta</nombre>
+    <descripcion>Vestido largo de seda con detalles de encaje</descripcion>
+    <precio tipo='Euros'>99.99</precio>
+    <talla>S</talla>
+    <color frioOCalido='calido'>Naranja</color>
+  </producto>
+  <producto idDep='mujer'>
+    <id>2023-4</id>
+    <nombre>Blusa</nombre>
+    <descripcion>Blusa de mujer</descripcion>
+    <precio tipo='Rupias'>8808.60</precio>
+    <talla>XL</talla>
+    <color frioOCalido='calido'>Marron</color>
+  </producto>
+  <departamento idDep='hombre'>Moda Hombre</departamento>
+  <departamento idDep='mujer'>Modad Mujer</departamento>
+  
+</tienda>

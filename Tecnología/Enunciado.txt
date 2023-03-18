@@ -1,0 +1,6 @@
+ESCRIBE UN XSD QUE VALIDE EL SIGUIENTE XML:
+- El código de postal ha de tener solo 5 dígitos.
+- El precio debe contener decimales
+- Los años de garantía tienen un máximo de 15 años
+- El código de país debe tener máximo 3 dígitos y minimo 2 dígitos
+- El número de teléfono ha de ser completo; debe constar de un máximo de 15 dígitos y comenzar por un prefijo nacional (Debe tener la separación entre el prefijo y el número).

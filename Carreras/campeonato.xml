@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="campeonato.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<carreras>
+    <circuito fecha="2022-03-20" idGanador="LEC">
+        <trazado>Gran Premio de Bahréin</trazado>
+        <ubicacion>Sakhir, Bahréin</ubicacion>
+        <distancia curvas="15">5412 km</distancia>
+    </circuito>
+    <circuito fecha="2022-03-27" idGanador="VER">
+        <trazado>Gran Premio de Arabia Saudi</trazado>
+        <ubicacion>Yeda, Arabia Saudí</ubicacion>
+        <distancia curvas="27">6175 km</distancia>
+    </circuito>
+    <circuito fecha="2022-04-10" idGanador="LEC">
+        <trazado>Gran Premio de Australia</trazado>
+        <ubicacion>Melbourne, Australia</ubicacion>
+        <distancia curvas="16">5303 km</distancia>
+    </circuito>
+    <circuito fecha="2022-04-24" idGanador="VER">
+        <trazado>Gran Premio de Emilia Romaña</trazado>
+        <ubicacion>Imola, Italia</ubicacion>
+        <distancia curvas="20">4908 km</distancia>
+    </circuito>
+    <circuito fecha="2022-05-08" idGanador="VER">
+        <trazado>Gran Premio de Miami</trazado>
+        <ubicacion>Miami, Estados Unidos</ubicacion>
+        <distancia curvas="19">5412 km</distancia>
+    </circuito>
+    <piloto idPiloto="LEC" dorsal="16" victorias="2" puntos="104">
+        <nombre>Charles Leclerc</nombre>
+        <fechaNacimiento>1997-10-16</fechaNacimiento>
+        <nacionalidad>Mónaco</nacionalidad>
+        <escuderia>Scuderia Ferrari</escuderia>
+        <salario>24 millones</salario>
+    </piloto>
+    <piloto idPiloto="SAI" dorsal="55" victorias="0" puntos="53">
+        <nombre>Carlos Sainz</nombre>
+        <fechaNacimiento>1994-09-01</fechaNacimiento>
+        <nacionalidad>España</nacionalidad>
+        <escuderia>Scuderia Ferrari</escuderia>
+        <salario>12 millones</salario>
+    </piloto>
+    <piloto idPiloto="VER" dorsal="1" victorias="3" puntos="85">
+        <nombre>Max Verstappen</nombre>
+        <fechaNacimiento>1997-09-30</fechaNacimiento>
+        <nacionalidad>Países Bajos</nacionalidad>
+        <escuderia>Oracle Red Bull Racing</escuderia>
+        <salario>24 millones</salario>
+    </piloto>
+    <piloto idPiloto="PER" dorsal="11" victorias="0" puntos="66">
+        <nombre>Sergio Pérez</nombre>
+        <fechaNacimiento>1990-01-26</fechaNacimiento>
+        <nacionalidad>México</nacionalidad>
+        <escuderia>Oracle Red Bull Racing</escuderia>
+        <salario>10 millones</salario>
+    </piloto>
+</carreras>

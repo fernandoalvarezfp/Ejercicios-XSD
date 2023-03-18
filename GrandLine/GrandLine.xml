@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="GrandLine.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<GrandLine>
+
+    <Tripulacion nombre="Sombrero de Paja" barco="Thousand Sunny" idTripulacion="A01">
+        <Pirata nombre="Brook" capitan="si" recompensa="83.000.000 B" situacion="muerto">
+            <FrutaDelDiablo>Yomi Yomi</FrutaDelDiablo>
+        </Pirata>
+
+        <Pirata nombre="Franky" capitan="no" recompensa="94.000.000 B" situacion="vivo">
+            <FrutaDelDiablo>****</FrutaDelDiablo>
+        </Pirata>
+    </Tripulacion>
+
+    <Tripulacion nombre="Piratas de Barbablanca" barco="Moby Dick" idTripulacion="B02">
+        <Pirata nombre="Barbablanca" capitan="si" recompensa="5.046.000.000 B" situacion="vivo">
+            <FrutaDelDiablo>Gura Gura</FrutaDelDiablo>
+        </Pirata>
+        <Pirata nombre="Ace" capitan="no" recompensa="550.000.000" situacion="vivo">
+            <FrutaDelDiablo>Mera Mera</FrutaDelDiablo>
+        </Pirata>
+        <Pirata nombre="Marco" capitan="no" recompensa="?????? B" situacion="vivo">
+            <FrutaDelDiablo>Tori Tori</FrutaDelDiablo>
+        </Pirata>
+    </Tripulacion>
+
+    <Tripulacion nombre="Piratas de Barbanegra" barco="Sabel of Xebec" idTripulacion="C03">
+        <Pirata nombre="Barbanegra" capitan="si" recompensa="2.247.600.000 B" situacion="vivo">
+            <FrutaDelDiablo>Yami Yami</FrutaDelDiablo>
+        </Pirata>
+        <Pirata nombre="Zoro" capitan="no" recompensa="450.000.000" situacion="muerto">
+        </Pirata>
+    </Tripulacion>
+
+
+
+    <Batalla nombre="Marineford" fecha="1522-05-01">
+        <Bandos nombre="Piratas de Barbablanca" idBando="B02"></Bandos>
+        <Bandos nombre="Piratas de Barbanegra" idBando="C03"></Bandos>
+    </Batalla>
+
+    <Batalla nombre="Edd War" fecha="1497-02-06">
+        <Bandos nombre="Piratas de Barbanegra"  idBando="C03"></Bandos> 
+        <Bandos nombre="Piratas de Barbablanca" idBando="B02"></Bandos>
+    </Batalla>
+
+    <Batalla nombre="Asalto a Onigashima" fecha="1524-02-04">
+        <Bandos nombre="Sombrero de paja" idBando="A01"></Bandos>
+        <Bandos nombre="Piratas de Barbablanca" idBando="B02"></Bandos>
+    </Batalla>
+
+    <Batalla nombre="La Venganza" fecha="1523-09-03">
+        <Bandos nombre="Piratas de Barbablanca" idBando="B02"></Bandos>
+        <Bandos nombre="Sombrero de paja" idBando="A01"></Bandos>
+    </Batalla>
+
+</GrandLine>

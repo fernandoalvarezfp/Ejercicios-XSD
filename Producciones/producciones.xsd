@@ -1,0 +1,96 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="producciones">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="proyecto" minOccurs="1" maxOccurs="unbounded" type="tipoProyecto">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="UniqueProyectoNombre">
+            <xs:selector xpath="proyecto" />
+            <xs:field xpath="@nombre" />
+        </xs:unique>
+        <xs:unique name="UniqueProyectoId">
+            <xs:selector xpath="proyecto"></xs:selector>
+            <xs:field xpath="@id"></xs:field>
+        </xs:unique>
+    </xs:element>
+
+
+    <xs:complexType name="tipoProyecto">
+        <xs:sequence>
+            <xs:element name="tipo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Largometraje"></xs:enumeration>
+                        <xs:enumeration value="Cortometraje"></xs:enumeration>
+                        <xs:enumeration value="Festival"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="seguros">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="seguro" minOccurs="1" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="patrocinadores">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="patrocinador" minOccurs="0" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="localizaciones">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="localizacion" minOccurs="1" maxOccurs="unbounded" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+
+            <xs:element name="personal">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="empleado" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="departamento"></xs:element>
+                                    <xs:element name="empresa"></xs:element>
+                                    <xs:element name="puesto"></xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="nombre" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+
+
+        <xs:attribute name="nombre"> 
+            <xs:simpleType>
+                <xs:restriction base="xs:token">
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="productora" type="xs:string"></xs:attribute>
+        <xs:attribute name="fecha" type="xs:date"></xs:attribute>
+        <xs:attribute name="id">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(PX){1}[0-9]{4}"></xs:pattern>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+
+</xs:schema>

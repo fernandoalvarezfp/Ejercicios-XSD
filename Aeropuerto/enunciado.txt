@@ -1,0 +1,25 @@
+Enunciado:
+
+Crea un esquema XSD para validar los documentos XML que contienen información del panel de vuelos de un aeropuerto, teniendo en cuenta la siguiente información:
+
+	- El aeropuerto tiene un nombre, vuelos y pilotos, estos podrán aparecer en cualquier orden.
+
+	- El elemento vuelos tiene un atributo obligatorio fecha y está compuesto por subelementos vuelo. 
+	  Debe permitirse aparecer desde cero hasta ilimitados elementos vuelo, y para cada uno de ellos debe de guardarse la información en el mismo orden.
+
+	- Cada elemento vuelo consta de un origen, destino, hora de salida y hora de llegada. Además, también pueden tener un elemento vacío que indica si el vuelo 
+	  es diario o no. Este aparece en caso de que el vuelo sea diario o no en caso de que no lo sea.
+
+	- Cada vuelo tiene un atributo código, tipo y estado (este último siendo opcional).
+
+	- El elemento pilotos está compuesto por subelementos piloto. Cada piloto tiene obligatoriamente los atributos dni, nombre y código de vuelo que hace referencia 
+	  al código del vuelo correspondiente.
+
+Restricciones:
+
+	- El nombre del aeropuerto deben de ser tres letras mayúsculas.
+	- El origen y el destino son cadenas de caracteres que tendrán una longitud mínima de 5 caracteres y una longitud máxima de 25.
+	- El primer carácter del código del elemento vuelo será una letra mayúscula, seguida por un guión y tres números.
+	- El tipo de vuelo podrá tomar dos valores, comercial o privado.
+	- El estado puede tomar los valores E (En hora), C (Cancelado) o R (Retrasado). Tomará como valor por defecto E.
+	- El dni del piloto será una cadena de 8 números enteros (evitando el 0 en la primera posición) y un carácter en mayúsculas final.

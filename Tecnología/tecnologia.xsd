@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="empresa">
+        <xs:complexType >
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="local" type="tipoLocal"></xs:element>
+                <xs:element name="articulo" type="tipoArticulo"></xs:element>
+                <xs:element name="proveedor" type="tipoProveedor"></xs:element>
+                
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="tipoLocal">
+        <xs:sequence>
+            <xs:element name="lugar" type="xs:string"></xs:element>
+            <xs:element name="codPostal" type="tipoCodPostal"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoArticulo">
+        <xs:sequence>
+            <xs:element name="marca" type="xs:string"></xs:element>
+            <xs:element name="modelo" type="xs:string"></xs:element>
+            <xs:element name="precio" type="xs:double"></xs:element>
+            <xs:element name="añosGarantia" type="xs:double" minOccurs="0" maxOccurs="15"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="tipo" type="xs:string"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoProveedor">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="telefono" type="tipoTelefono"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="codigoPais" type="tipoCodigoPais"></xs:attribute>
+        <xs:attribute name="ciudad" type="xs:string"></xs:attribute>
+    </xs:complexType>
+    
+    <xs:simpleType name="tipoCodigoPais">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTelefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(\d{2,3})\s\d{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodPostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,101 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="listaNinjas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="villa" maxOccurs="unbounded" type="tipoVilla"> </xs:element>
+                <xs:element name="técnicasNinja" type="tipoTecnicasNinja" maxOccurs="200">
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:key name="tec">
+            <xs:selector xpath=".//técnica" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:keyref name="referTecnica" refer="tec">
+            <xs:selector xpath=".//técnicaPoderosa" />
+            <xs:field xpath="@id" />
+        </xs:keyref>
+    </xs:element>
+
+    <xs:complexType name="tipoVilla">
+        <xs:sequence>
+            <xs:element name="kage" type="tipoKage">
+            </xs:element>
+            <xs:element name="sensei">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="jonin" minOccurs="0"
+                            maxOccurs="unbounded" type="tipoJonin">
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="tipoNombreVilla" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoNombreVilla">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoKage">
+        <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="apellido" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="numeroKage" type="xs:integer" use="required"> </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoJonin">
+        <xs:sequence>
+            <xs:element name="estudiante" type="tipoEstudiante" minOccurs="1" maxOccurs="3">
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="apellido" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="fecha" type="xs:date" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoEstudiante">
+        <xs:sequence>
+            <xs:element name="nivel" type="tipoNivel">
+            </xs:element>
+            <xs:element name="técnicaPoderosa" type="tipoTecnicaPoderosa">
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+        <xs:attribute name="apellido" type="xs:string" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoNivel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Genin"></xs:enumeration>
+            <xs:enumeration value="Chunin"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoTecnicasNinja">
+        <xs:sequence>
+            <xs:element name="técnica" type="tipoTecnica" minOccurs="3" maxOccurs="200"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTecnicaPoderosa">
+        <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTecnica">
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="descripción" type="xs:string"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="tipoIdTecnica" use="required"></xs:attribute>
+    </xs:complexType>
+
+    <xs:simpleType name="tipoIdTecnica">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[T][0-9]{2}[A-B]"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

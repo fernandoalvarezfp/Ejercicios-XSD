@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libreria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="libreria.xsd">
+<articulo isbn='9788419266286' precio='22.00' editorial='H03'>
+    <titulo>Babel</titulo>
+    <autor>R.F. Kuang</autor>
+    <paginas>700</paginas>
+    <genero>Narrativa fantástica</genero>
+    <fechaLanzamiento año='2022' mes='Noviembre' dia='28'/>
+    <sinopsis>1828. El Instituto Real de Traducción de Oxford, también conocido como Babel, 
+    es la institución mágica más importante del mundo. La magia con plata capaz de revelar...</sinopsis>
+</articulo>
+<articulo isbn='9788413143941' precio='14.95' editorial='B01'>
+    <titulo>El camino de los reyes</titulo>
+    <autor>Brandon Sanderson</autor>
+    <paginas>1200</paginas>
+    <genero>Narrativa fantástica</genero>
+    <fechaLanzamiento año='2022' mes='Abril' dia='7'/>
+</articulo>
+<editorial id='H03'>
+    <nombre>Hidra</nombre>
+    <direccion>Cuevas, 27-3ºA. 28039 MADRID</direccion>
+    <tlf>915715427</tlf>
+</editorial>
+<editorial id='B01'>
+    <nombre>B de Bolsillo</nombre>
+    <direccion>Calle Consell de Cent 425, 08009 BARCELONA</direccion>
+    <tlf>934846600</tlf>
+</editorial>
+</libreria>

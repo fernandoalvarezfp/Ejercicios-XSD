@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="discografia.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<discografía>
+    <peza id="P01" album="D03" duracion="3.35">
+        <ritmo compás="2/4" tipo="Pasodoble"></ritmo>
+        <titulo>Mallou</titulo>
+        <descricion>Pasodoble adicado á parroquia de Mallou</descricion>
+    </peza>    
+    <peza id="X02" album="D02" duracion="3.56">
+        <ritmo compás="3/4" tipo="Xota"></ritmo>
+        <titulo>Xota da guía</titulo>
+    </peza>
+    <album codigo="D01" pistas="7">
+        <titulo>Gáitropos</titulo>
+        <artista>Leixaprén</artista>
+        <dataPublicacion dia="07" mes="Xuño" ano="1992"/>
+    </album>
+    <album codigo="D02" pistas="12">
+        <titulo>Folkfusión</titulo>
+        <artista>BellonMaceiras</artista>
+        <dataPublicacion dia="01" mes="Xuño" ano="2010"/>
+    </album>
+    <album codigo="D03" pistas="6">
+        <titulo>Durindaina</titulo>
+        <artista>Durindaina</artista>
+        <dataPublicacion dia="22" mes="Xullo" ano="2008"/>
+    </album>
+</discografía>
